@@ -9,5 +9,5 @@ thumbnail: seirs_model.png
 alt: Cruise network simulation visualization
 project-date: Aug 2025
 category: Simulation, Data Science
-description: Simulation of infectious disease spread on a cruise ship using a dynamic contact network and SEIRS+ epidemic model. Link to code (https://github.com/scho249/Cruise_Flu_Outbreak_Simulation.git)
+description: Simulation of infectious disease spread on a cruise ship using a dynamic contact network and SEIRS+ epidemic model. [View Code](https://github.com/scho249/Cruise_Flu_Outbreak_Simulation)
 ---
