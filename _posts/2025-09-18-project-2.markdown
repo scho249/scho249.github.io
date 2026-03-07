@@ -2,7 +2,7 @@
 title: Legal Text NER Classification
 subtitle: NER classification on Legal Docket Entries
 layout: default
-modal-id: 1
+modal-id: 2
 date: Sept 2025
 img: ner_dashboard.png
 thumbnail: ner_pipeline.png
