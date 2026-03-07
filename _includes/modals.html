@@ -31,6 +31,11 @@
                                 </li>
                             </ul>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            {% if post.github %}
+                            <a href="{{ post.github }}" target="_blank" class="btn btn-primary">
+                                <i class="fa fa-github"></i> View Code
+                            </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
