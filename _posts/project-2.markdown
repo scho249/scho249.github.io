@@ -5,7 +5,7 @@ layout: default
 modal-id: 1
 date: Sept 2025
 img: ner_dashboard.png
-thumbnail: seirs_model.png
+thumbnail: ner_pipeline.png
 alt: NER inference visualization
 project-date: Sept 2025
 category: Python pipeline, NLP, Data Analysis
