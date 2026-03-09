@@ -1,15 +1,14 @@
 ---
-title: Golden
-subtitle: Website Design
+title: Fetal Health Classification
+subtitle: Classification and analysis of imbalanced cardiotocography data to determine fetal health conditions
 layout: default
 modal-id: 3
-date: 2014-07-16
+date: September, 2025
 img: golden.png
 thumbnail: golden-thumbnail.png
 alt: image-alt
-project-date: April 2014
-client: Start Bootstrap
-category: Web Development
-description: Lorem ipsum dolor sit amet, usu cu alterum nominavi lobortis. At duo novum diceret. Tantas apeirian vix et, usu sanctus postulant inciderint ut, populo diceret necessitatibus in vim. Cu eum dicam feugiat noluisse.
+project-date: September 2025
+category: Classification, SMOTE, Data Analysis
+description: Machine learning project analyzing cardiotocography (CTG) data to classify fetal health conditions. The project addresses class imbalance using SMOTE and explores feature engineering, PCA, and model evaluation techniques.
 
 ---
