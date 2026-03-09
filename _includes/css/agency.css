@@ -238,7 +238,7 @@ fieldset[disabled] .btn-xl.active {
     .navbar-default {
         padding: 25px 0;
         border: 0;
-        background-color: transparent;
+        background-color: #222;
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -256,7 +256,7 @@ fieldset[disabled] .btn-xl.active {
     }
 
     .navbar-default.navbar-shrink {
-        padding: 10px 0;
+        padding: 25px 0;
         background-color: #222;
     }
 
@@ -659,8 +659,9 @@ aside.clients img {
 section#contact {
     background-color: #222;
     background-image: url('{{ site.baseurl }}/img/connect.jpg');
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-size: 100% auto;
 }
 
 section#contact .section-heading {
