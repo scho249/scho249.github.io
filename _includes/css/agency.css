@@ -371,8 +371,8 @@ section h3.section-subheading {
     display: block;
     position: relative;
     margin: 0 auto;
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 400px;
     overflow: hidden;
 }
 
