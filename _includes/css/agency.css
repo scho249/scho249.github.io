@@ -663,7 +663,7 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url('{{ site.baseurl }}/img/connect.jpg');
+    /*background-image: url('{{ site.baseurl }}/img/connect.jpg');*/
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -706,21 +706,21 @@ section#contact:-moz-placeholder {
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
     font-weight: 700;
-    color: #bbb;
+    color: #dedede;
 }
 
 section#contact::-moz-placeholder {
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
     font-weight: 700;
-    color: #bbb;
+    color: #dedede;
 }
 
 section#contact:-ms-input-placeholder {
     text-transform: uppercase;
     font-family: {{ site.data.template.font.primary }};
     font-weight: 700;
-    color: #bbb;
+    color: #dedede;
 }
 
 section#contact .text-danger {
