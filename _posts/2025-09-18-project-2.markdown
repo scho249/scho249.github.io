@@ -5,7 +5,7 @@ layout: default
 modal-id: 2
 date: Sept 2025
 img: ner_dashboard.png
-thumbnail: ner_pipeline.png
+thumbnail: ner_thumbnail.png
 alt: NER inference visualization
 project-date: Sept 2025
 category: ds
