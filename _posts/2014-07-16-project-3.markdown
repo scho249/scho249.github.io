@@ -4,11 +4,11 @@ subtitle: Classification and analysis of imbalanced cardiotocography data to det
 layout: default
 modal-id: 3
 date: September, 2025
-img: golden.png
-thumbnail: fetal_health.png
+img: fetal_health.png
+thumbnail: ctg_thumbnail.png
 alt: image-alt
 project-date: September 2025
-category: Classification, SMOTE, Data Analysis
+category: ds
 description: Machine learning project analyzing cardiotocography (CTG) data to classify fetal health conditions. The project addresses class imbalance using SMOTE and explores feature engineering, PCA, and model evaluation techniques.
 
 ---
