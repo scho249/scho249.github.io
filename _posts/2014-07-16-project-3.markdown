@@ -1,6 +1,6 @@
 ---
 title: Fetal Health Classification
-subtitle: Classification and analysis of imbalanced cardiotocography data to determine fetal health conditions
+subtitle: Cardiotocography classification comparison
 layout: default
 modal-id: 3
 date: September, 2025

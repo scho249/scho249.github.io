@@ -5,7 +5,7 @@ layout: default
 modal-id: 1
 date: Aug 2025
 img: simulation.png
-thumbnail: seirs_model.png
+thumbnail: cruise_thumbnail.png
 alt: Cruise network simulation visualization
 project-date: Aug 2025
 category: ds
