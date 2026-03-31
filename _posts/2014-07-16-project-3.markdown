@@ -9,6 +9,10 @@ thumbnail: ctg_thumbnail.png
 alt: image-alt
 project-date: September 2025
 category: ds
-description: Machine learning project analyzing cardiotocography (CTG) data to classify fetal health conditions. The project addresses class imbalance using SMOTE and explores feature engineering, PCA, and model evaluation techniques.
+description: 
+- Built a machine learning model to classify fetal health conditions from cardiotocography (CTG) data, focusing on reducing misclassification of high-risk (Pathologic) cases  
+- Applied data preprocessing, feature engineering, PCA, and SMOTE to address class imbalance and improve model learning  
+- Trained and tuned multiple models, identifying Gradient Boosting as the top performer  
+- Achieved ~95% accuracy with strong recall for Pathologic cases, minimizing critical false negatives  
 
 ---
