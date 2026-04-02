@@ -3,16 +3,20 @@ title: Fetal Health Classification
 subtitle: Cardiotocography classification comparison
 layout: default
 modal-id: 3
-date: September, 2025
+date: September 2025
 img: fetal_health.png
+summary-img: ctg_thumbnail.png
 thumbnail: ctg_thumbnail.png
-alt: image-alt
+alt: Fetal health classification dashboard
 project-date: September 2025
 category: ds
-description: 
-- Built a machine learning model to classify fetal health conditions from cardiotocography (CTG) data, focusing on reducing misclassification of high-risk (Pathologic) cases  
-- Applied data preprocessing, feature engineering, PCA, and SMOTE to address class imbalance and improve model learning  
-- Trained and tuned multiple models, identifying Gradient Boosting as the top performer  
-- Achieved ~95% accuracy with strong recall for Pathologic cases, minimizing critical false negatives  
 
+summary: Built a machine learning pipeline to classify fetal health conditions from cardiotocography data, with a focus on reducing false negatives in high-risk cases.
+tech: Python, Scikit-learn, PCA, SMOTE, Gradient Boosting
+impact: ~95% accuracy | Strong recall on Pathologic class | Reduced critical false negatives
+
+description: This project developed and evaluated machine learning models for fetal health classification using cardiotocography (CTG) data. The workflow included preprocessing, feature engineering, PCA, and SMOTE to address class imbalance and improve model learning. Multiple models were trained and compared, with Gradient Boosting delivering the best performance. The final model achieved about 95% accuracy while maintaining strong recall for Pathologic cases, helping reduce critical false negatives in high-risk predictions.
+
+github: https://github.com/scho249/fetal_health_classifier.git
+demo:
 ---

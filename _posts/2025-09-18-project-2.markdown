@@ -1,14 +1,22 @@
 ---
 title: Legal Text NER Classification
-subtitle: NER classification on Legal Docket Entries
+subtitle: Named entity recognition on legal docket entries
 layout: default
 modal-id: 2
-date: Sept 2025
+date: September 2025
 img: ner_dashboard.png
+summary-img: ner_thumnail.png
 thumbnail: ner_thumbnail.png
-alt: NER inference visualization
-project-date: Sept 2025
+alt: Legal NER dashboard
+project-date: September 2025
 category: ds
-description: Built an end-to-end NLP pipeline for Named Entity Recognition (NER) on legal docket entries. The pipeline retrieves training data, preprocesses text into entity-tag format, fine-tunes BERT-based models, evaluates inference performance, and deploys the trained model to HuggingFace for reproducible inference.
-github: 
+
+summary: Built an end-to-end NLP pipeline for named entity recognition on legal docket text, from preprocessing to transformer fine-tuning and reproducible inference.
+tech: Python, NLP, Hugging Face, BERT, Named Entity Recognition
+impact: End-to-end NLP workflow | Automated training-to-inference pipeline | Reproducible deployment on Hugging Face
+
+description: This project built an end-to-end NLP pipeline for Named Entity Recognition (NER) on legal docket entries. The workflow retrieves training data, preprocesses text into entity-tag format, fine-tunes BERT-based models, evaluates inference performance, and deploys the trained model to Hugging Face for reproducible inference. The project demonstrates practical experience in legal NLP, transformer-based modeling, and production-oriented workflow design.
+
+github:
+demo:
 ---

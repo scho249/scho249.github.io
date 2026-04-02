@@ -1,14 +1,22 @@
 ---
 title: Cruise Disease Outbreak Simulation
-subtitle: Network-Based Epidemic Modeling
+subtitle: Network-based epidemic modeling
 layout: default
 modal-id: 1
-date: Aug 2025
+date: August 2025
 img: simulation.png
+summary-img: cruise_thumbnail.png
 thumbnail: cruise_thumbnail.png
 alt: Cruise network simulation visualization
-project-date: Aug 2025
+project-date: August 2025
 category: ds
-description: Developed a network-based simulation of infectious disease transmission on a cruise ship using the SEIRS+ epidemic modeling framework. The model incorporates dynamic contact networks among passengers and crew to evaluate intervention strategies, with statistical comparisons of outbreak outcomes under different mitigation scenarios. 
+
+summary: Developed a network-based outbreak simulation to model disease spread on a cruise ship and evaluate intervention strategies across passengers and crew.
+tech: Python, SEIRS+, Network Modeling, Simulation, Statistical Analysis
+impact: Simulated multiple intervention scenarios | Compared outbreak outcomes statistically | Modeled passenger-crew transmission dynamics
+
+description: This project built a network-based simulation of infectious disease transmission on a cruise ship using the SEIRS+ epidemic modeling framework. The model represented dynamic contact networks among passengers and crew and was used to test intervention strategies under different outbreak scenarios. By comparing simulated outcomes statistically, the project showed how network structure, behavioral assumptions, and mitigation policies influence disease spread in closed environments.
+
 github: https://github.com/scho249/Cruise_Flu_Outbreak_Simulation
+demo:
 ---

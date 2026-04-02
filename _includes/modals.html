@@ -1,32 +1,76 @@
- <!-- Portfolio Modals -->
- {% for post in site.posts %}
-    <div class="portfolio-modal modal fade" id="portfolioModal{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
+<!-- Portfolio Modals -->
+{% for post in site.posts %}
+<div class="portfolio-modal modal fade" id="portfolioModal{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl"></div>
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>{{ post.title }}</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
-                            <p>{{ post.description }}</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">{{ post.client }}</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">{{ post.project-date }}</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        </div>
+
+        <div class="container portfolio-modal-container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div class="modal-body">
+                        <h2>{{ post.title }}</h2>
+                        <p class="modal-subtitle text-muted">{{ post.subtitle }}</p>
+                        <hr class="star-primary">
+
+                        <div class="project-modal-images">
+                            {% if post.summary-img %}
+                                <img src="img/portfolio/{{ post.summary-img }}" class="project-modal-image sum-img" alt="">
+                            {% endif %}
+
+                            <img src="img/portfolio/{{ post.img }}" class="project-modal-image main-img" alt="{{ post.alt }}">
+                        </div>
+
+                        <div class="project-modal-text">
+                            {% if post.summary %}
+                                <p class="project-summary"><strong>Overview:</strong> {{ post.summary }}</p>
+                            {% endif %}
+
+                            {% if post.description %}
+                                <p>{{ post.description }}</p>
+                            {% endif %}
+
+                            {% if post.tech %}
+                                <p><strong>Tech:</strong> {{ post.tech }}</p>
+                            {% endif %}
+
+                            {% if post.impact %}
+                                <p><strong>Impact:</strong> {{ post.impact }}</p>
+                            {% endif %}
+                        </div>
+
+                        <ul class="list-inline item-details">
+                            {% if post.project-date %}
+                            <li>Date:
+                                <strong>{{ post.project-date }}</strong>
+                            </li>
+                            {% endif %}
+
+                            {% if post.github %}
+                            <li>Code:
+                                <strong>
+                                    <a href="{{ post.github }}" target="_blank">GitHub</a>
+                                </strong>
+                            </li>
+                            {% endif %}
+
+                            {% if post.demo %}
+                            <li>Demo:
+                                <strong>
+                                    <a href="{{ post.demo }}" target="_blank">View</a>
+                                </strong>
+                            </li>
+                            {% endif %}
+                        </ul>
+
+                        <div class="modal-buttons">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                <i class="fa fa-times"></i> Close
+                            </button>
+
                             {% if post.github %}
                             <a href="{{ post.github }}" target="_blank" class="btn btn-primary">
                                 <i class="fa fa-github"></i> View Code
@@ -38,4 +82,5 @@
             </div>
         </div>
     </div>
+</div>
 {% endfor %}
