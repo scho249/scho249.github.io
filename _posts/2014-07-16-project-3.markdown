@@ -1,11 +1,12 @@
 ---
+
 title: Fetal Health Classification
 subtitle: Cardiotocography classification comparison
 layout: default
 modal-id: 3
 date: September 2025
 img: fetal_health.png
-summary-img: ctg_thumbnail.png
+summary_img: ctg_thumbnail.png
 thumbnail: ctg_thumbnail.png
 alt: Fetal health classification dashboard
 project-date: September 2025
@@ -19,4 +20,5 @@ description: This project developed and evaluated machine learning models for fe
 
 github: https://github.com/scho249/fetal_health_classifier.git
 demo:
+
 ---

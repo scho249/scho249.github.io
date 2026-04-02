@@ -17,11 +17,11 @@
                         <hr class="star-primary">
 
                         <div class="project-modal-images">
-                            {% if post.summary-img %}
-                                <img src="img/portfolio/{{ post.summary-img }}" class="project-modal-image sum-img" alt="">
+                            {% if post.summary_img %}
+                                <img src="{{ site.baseurl }}/img/portfolio/{{ post.summary_img }}" class="project-modal-image sum-img" alt="">
                             {% endif %}
 
-                            <img src="img/portfolio/{{ post.img }}" class="project-modal-image main-img" alt="{{ post.alt }}">
+                            <img src="{{ site.baseurl }}/img/portfolio/{{ post.img }}" class="project-modal-image main-img" alt="{{ post.alt }}">
                         </div>
 
                         <div class="project-modal-text">

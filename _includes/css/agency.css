@@ -1,13 +1,13 @@
 /*!
- * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ * Start Bootstrap - Agency Bootstrap Theme
+ * Recovered + customized portfolio CSS
  */
 
-body {
+ body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #{{ site.data.template.color.secondary-dark }};
+    -webkit-tap-highlight-color: #{{ site.data.template.color.primary }};
 }
 
 .text-muted {
@@ -287,7 +287,6 @@ header .intro-text .intro-lead-in {
     margin-bottom: 25px;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
-    /*font-style: italic;*/
     line-height: 22px;
 }
 
@@ -310,7 +309,6 @@ header .intro-text .intro-heading {
         margin-bottom: 25px;
         font-family: {{ site.data.template.font.secondary }};
         font-size: 40px;
-        /*font-style: italic;*/
         line-height: 40px;
     }
 
@@ -339,7 +337,6 @@ section h3.section-subheading {
     text-transform: none;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 16px;
-    /*font-style: italic;*/
     font-weight: 400;
 }
 
@@ -354,11 +351,11 @@ section h3.section-subheading {
     text-transform: none;
 }
 
+/* Legacy portfolio hover */
 #portfolio_ds .portfolio-item,
 #portfolio_da .portfolio-item {
     right: 0;
     margin-bottom: 30px;
-    height: 400px;
 }
 
 #portfolio_ds .portfolio-item .portfolio-link,
@@ -369,12 +366,6 @@ section h3.section-subheading {
     overflow: hidden;
 }
 
-#portfolio_ds .portfolio-item .portfolio-link img,
-#portfolio_da .portfolio-item .portfolio-link img {
-    width: 100%;
-    display: block;
-}
-
 #portfolio_ds .portfolio-item .portfolio-link .portfolio-hover,
 #portfolio_da .portfolio-item .portfolio-link .portfolio-hover {
     position: absolute;
@@ -383,7 +374,6 @@ section h3.section-subheading {
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
-    background: rgba(254,209,54,.9);
     background: rgba({{ site.data.template.color.primary | hex_to_rgb | join: ',' }}, .9);
 }
 
@@ -403,38 +393,9 @@ section h3.section-subheading {
     color: #fff;
 }
 
-#portfolio_ds .portfolio-item .portfolio-caption,
-#portfolio_da .portfolio-item .portfolio-caption {
-    margin: 0 auto;
-    padding: 25px;
-    text-align: center;
-    background-color: #fff;
-    box-sizing: border-box;
-    min-height: 150px;
-}
-
-#portfolio_ds .portfolio-item .portfolio-caption h4,
-#portfolio_da .portfolio-item .portfolio-caption h4 {
-    margin: 0;
-    text-transform: none;
-}
-
-#portfolio_ds .portfolio-item .portfolio-caption p,
-#portfolio_da .portfolio-item .portfolio-caption p {
-    margin: 0;
-    font-family: {{ site.data.template.font.secondary }};
-    font-size: 16px;
-}
-
 #portfolio_ds *,
 #portfolio_da * {
     z-index: 2;
-}
-
-@media(min-width:767px) {
-    #portfolio .portfolio-item {
-        margin: 0 0 30px;
-    }
 }
 
 .timeline {
@@ -663,7 +624,6 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    /*background-image: url('{{ site.baseurl }}/img/connect.jpg');*/
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 100% auto;
@@ -733,7 +693,6 @@ footer {
 }
 
 footer span.copyright {
-    text-transform: uppercase;
     text-transform: none;
     font-family: {{ site.data.template.font.primary }};
     line-height: 40px;
@@ -741,7 +700,6 @@ footer span.copyright {
 
 footer ul.quicklinks {
     margin-bottom: 0;
-    text-transform: uppercase;
     text-transform: none;
     font-family: {{ site.data.template.font.primary }};
     line-height: 40px;
@@ -779,8 +737,9 @@ ul.social-buttons li a:active {
     outline: 0;
 }
 
+/* Modal base */
 .portfolio-modal .modal-content {
-    padding: 100px 0;
+    padding: 80px 0;
     min-height: 100%;
     border: 0;
     border-radius: 0;
@@ -788,11 +747,14 @@ ul.social-buttons li a:active {
     background-clip: border-box;
     -webkit-box-shadow: none;
     box-shadow: none;
+    font-family: Calibri, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 .portfolio-modal .modal-content h2 {
-    margin-bottom: 15px;
-    font-size: 3em;
+    margin-bottom: 10px;
+    font-size: 28px;
+    line-height: 1.15;
+    text-transform: none;
 }
 
 .portfolio-modal .modal-content p {
@@ -801,9 +763,7 @@ ul.social-buttons li a:active {
 
 .portfolio-modal .modal-content p.item-intro {
     margin: 20px 0 30px;
-    font-family: {{ site.data.template.font.secondary }};
     font-size: 16px;
-    /*font-style: italic;*/
 }
 
 .portfolio-modal .modal-content ul.list-inline {
@@ -813,6 +773,103 @@ ul.social-buttons li a:active {
 
 .portfolio-modal .modal-content img {
     margin-bottom: 0;
+}
+
+.portfolio-modal-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-modal .modal-body {
+    text-align: center;
+    padding: 40px 20px 60px;
+}
+
+.portfolio-modal .modal-subtitle,
+.portfolio-modal .project-modal-text,
+.portfolio-modal .item-details,
+.portfolio-modal .modal-buttons .btn {
+    font-family: Calibri, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.portfolio-modal .modal-subtitle {
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    color: #888;
+    text-transform: none;
+}
+
+.project-modal-images {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.project-modal-images::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background: #dcdcdc;
+}
+
+.project-modal-images img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+}
+
+.project-modal-images > img {
+    flex: 1 1 50%;
+    max-width: 50%;
+    max-height: 650px;
+    padding: 0 16px;
+}
+
+.portfolio-modal .project-modal-text {
+    max-width: 760px;
+    margin: 0 auto 25px;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 14px;
+    color: #444;
+}
+
+.portfolio-modal .project-modal-text p {
+    margin-bottom: 14px;
+}
+
+.portfolio-modal .project-summary {
+    font-size: 16px;
+}
+
+.portfolio-modal .item-details {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    padding-left: 0;
+}
+
+.portfolio-modal .item-details li {
+    margin: 0 12px 10px;
+}
+
+.portfolio-modal .modal-buttons {
+    margin-top: 10px;
+}
+
+.portfolio-modal .modal-buttons .btn {
+    margin: 6px;
 }
 
 .portfolio-modal .close-modal {
@@ -850,316 +907,8 @@ ul.social-buttons li a:active {
     transform: rotate(90deg);
 }
 
-::-moz-selection {
-    text-shadow: none;
-    background: #{{ site.data.template.color.primary }};
-}
-
-::selection {
-    text-shadow: none;
-    background: #{{ site.data.template.color.primary }};
-}
-
-img::selection {
-    background: 0 0;
-}
-
-img::-moz-selection {
-    background: 0 0;
-}
-
-body {
-    webkit-tap-highlight-color: #{{ site.data.template.color.primary }};
-}
-
-
-/* =========================
-   Portfolio Grid Cards
-   ========================= */
-
-   #portfolio_ds .portfolio-item,
-   #portfolio_da .portfolio-item {
-       margin-bottom: 30px;
-       height: auto;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-card,
-   #portfolio_da .portfolio-item .portfolio-card {
-       background: #fff;
-       border-radius: 10px;
-       overflow: hidden;
-       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-       height: 100%;
-       display: flex;
-       flex-direction: column;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-link,
-   #portfolio_da .portfolio-item .portfolio-link {
-       display: block;
-       position: relative;
-       margin: 0;
-       overflow: hidden;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-thumb,
-   #portfolio_da .portfolio-item .portfolio-thumb {
-       width: 100%;
-       height: 220px;
-       object-fit: cover;
-       display: block;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-caption,
-   #portfolio_da .portfolio-item .portfolio-caption {
-       padding: 18px;
-       text-align: left;
-       background-color: #fff;
-       min-height: unset;
-       display: flex;
-       flex-direction: column;
-       flex-grow: 1;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-caption h4,
-   #portfolio_da .portfolio-item .portfolio-caption h4 {
-       margin: 0 0 8px 0;
-       text-transform: none;
-       min-height: 48px;
-       line-height: 1.3;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-caption p,
-   #portfolio_da .portfolio-item .portfolio-caption p {
-       font-size: 14px;
-       line-height: 1.6;
-       margin-bottom: 10px;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-caption .project-subtitle,
-   #portfolio_da .portfolio-item .portfolio-caption .project-subtitle {
-       color: #888;
-       font-size: 14px;
-       margin-bottom: 10px;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-caption .project-summary,
-   #portfolio_da .portfolio-item .portfolio-caption .project-summary {
-       color: #444;
-       min-height: 66px;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-caption .project-tech,
-   #portfolio_ds .portfolio-item .portfolio-caption .project-impact,
-   #portfolio_da .portfolio-item .portfolio-caption .project-tech,
-   #portfolio_da .portfolio-item .portfolio-caption .project-impact {
-       color: #666;
-       font-size: 13px;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-caption .project-links,
-   #portfolio_da .portfolio-item .portfolio-caption .project-links {
-       margin-top: auto;
-       padding-top: 10px;
-   }
-   
-   #portfolio_ds .portfolio-item .portfolio-caption .project-links a,
-   #portfolio_da .portfolio-item .portfolio-caption .project-links a {
-       display: inline-block;
-       margin-right: 12px;
-       font-size: 13px;
-       font-weight: 600;
-       text-transform: none;
-   }
-   
-   
-   /* =========================
-      Portfolio Modal
-      ========================= */
-
-    .portfolio-modal .modal-content,
-    .portfolio-modal .modal-subtitle,
-    .portfolio-modal .project-modal-text,
-    .portfolio-modal .item-details,
-    .portfolio-modal .modal-buttons .btn {
-        font-family: Calibri, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    }
-   
-   .portfolio-modal .modal-content {
-       padding: 80px 0;
-   }
-   
-   .portfolio-modal-container {
-       max-width: 1000px;
-       margin: 0 auto;
-   }
-   
-   .portfolio-modal .modal-body {
-       text-align: center;
-       padding: 40px 20px 60px;
-   }
-   
-   .portfolio-modal .modal-content h2 {
-       margin-bottom: 10px;
-       font-size: 28px;
-       line-height: 1.15;
-   }
-   
-   .portfolio-modal .modal-subtitle {
-       font-size: 14px;
-       margin-top: 8px;
-       margin-bottom: 10px;
-       color: #888;
-       text-transform: none;
-   }
-/* 
-   .portfolio-modal .project-modal-image {
-       display: block;
-       max-width: 72%;
-       max-height: 460px;
-       width: auto;
-       height: auto;
-       margin: 0 auto 30px;
-       object-fit: contain;
-       border-radius: 8px;
-   }
-*/
-
-    .project-modal-images {
-        display: flex;
-        justify-content: flex-start;
-        align-items: stretch;
-        gap: 0;              
-        flex-wrap: wrap;
-        margin-bottom: 30px;
-        position: relative;
-    }
-
-    .project-modal-images::after {
-        content: "";
-        position: absolute;
-        top: 5%;
-        bottom: 5%;
-        left: 50%;
-        transform: translateX(-50%); 
-        width: 1px;
-        background: #dcdcdc;
-    }
-
-    .project-modal-images img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        border-radius: 10px;
-        background: none;
-        padding: 0;
-    }
-    
-    .project-modal-images > img {
-        flex: 1 1 50%;
-        max-width: 50%;
-        max-height: 650px;
-        padding: 0 16px
-    }
-
-
-   .portfolio-modal .project-modal-text {
-       max-width: 760px;
-       margin: 0 auto 25px;
-       text-align: left;
-       line-height: 1.8;
-       font-size: 14px;
-       color: #444;
-   }
-   
-   .portfolio-modal .project-modal-text p {
-       margin-bottom: 14px;
-   }
-   
-   .portfolio-modal .project-summary {
-       font-size: 16px;
-   }
-   
-   .portfolio-modal .item-details {
-       margin-top: 20px;
-       margin-bottom: 25px;
-       padding-left: 0;
-   }
-   
-   .portfolio-modal .item-details li {
-       margin: 0 12px 10px;
-   }
-   
-   .portfolio-modal .modal-buttons {
-       margin-top: 10px;
-   }
-   
-   .portfolio-modal .modal-buttons .btn {
-       margin: 6px;
-   }
-   
-   
-   /* =========================
-      Responsive
-      ========================= */
-   
-   @media (max-width: 991px) {
-       .portfolio-modal .project-modal-image {
-           max-width: 85%;
-           max-height: 420px;
-       }
-   
-       .portfolio-modal .project-modal-text {
-           max-width: 85%;
-           font-size: 15px;
-       }
-   }
-   
-   @media (max-width: 767px) {
-       #portfolio_ds .portfolio-item .portfolio-thumb,
-       #portfolio_da .portfolio-item .portfolio-thumb {
-           height: 200px;
-       }
-   
-       #portfolio_ds .portfolio-item .portfolio-caption h4,
-       #portfolio_da .portfolio-item .portfolio-caption h4 {
-           min-height: unset;
-       }
-   
-       #portfolio_ds .portfolio-item .portfolio-caption .project-summary,
-       #portfolio_da .portfolio-item .portfolio-caption .project-summary {
-           min-height: unset;
-       }
-   
-       .portfolio-modal .modal-content {
-           padding: 60px 0;
-       }
-   
-       .portfolio-modal .modal-content h2 {
-           font-size: 2.2em;
-       }
-   
-       .portfolio-modal .modal-subtitle {
-           font-size: 16px;
-       }
-   
-       .portfolio-modal .project-modal-image {
-           max-width: 92%;
-           max-height: 320px;
-       }
-   
-       .portfolio-modal .project-modal-text {
-           max-width: 92%;
-           font-size: 14px;
-           line-height: 1.7;
-       }
-   }
-
-/* =========================
-   Project Cards 
-   ========================= */
-
-   .project-card-col {
+/* Modern project cards */
+.project-card-col {
     margin-bottom: 34px;
     display: flex;
 }
@@ -1174,6 +923,7 @@ body {
     flex-direction: column;
     height: 100%;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
 }
 
 .project-card:hover {
@@ -1202,7 +952,6 @@ body {
     font-family: Calibri, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
-/* title */
 .project-card-title {
     font-family: Calibri, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 18px;
@@ -1211,27 +960,22 @@ body {
     text-transform: none;
     margin: 0 0 12px 0;
     color: #1f1f1f;
-    min-height: 48px; /* 🔥 높이 고정 */
+    min-height: 48px;
 }
 
-/* summary */
 .project-card-summary {
     font-size: 12px;
     line-height: 1.6;
     color: #666;
-
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-
     overflow: hidden;
     text-overflow: ellipsis;
-
-    min-height: calc(1.6em * 3); /* 🔥 높이 고정 */
+    min-height: calc(1.6em * 3);
     margin-bottom: 14px;
 }
 
-/* TAGS */
 .project-tags {
     margin-bottom: 14px;
 }
@@ -1249,7 +993,6 @@ body {
     font-family: Calibri, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
-/* 🔥 HIGHLIGHTS 안정화 */
 .project-highlights {
     margin: 0 0 18px 0;
     padding-left: 18px;
@@ -1257,11 +1000,9 @@ body {
     font-size: 13px;
     line-height: 1.6;
     font-family: Calibri, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-
     overflow: hidden;
     min-height: calc(1.6em * 3);
 }
@@ -1270,7 +1011,6 @@ body {
     margin-bottom: 3px;
 }
 
-/* 버튼 */
 .project-card-actions {
     margin-top: auto;
     display: flex;
@@ -1316,8 +1056,111 @@ body {
     background: #11113a;
 }
 
-/* section width */
 #portfolio_ds .container,
 #portfolio_da .container {
     max-width: 1180px;
+}
+
+::-moz-selection {
+    text-shadow: none;
+    background: #{{ site.data.template.color.primary }};
+}
+
+::selection {
+    text-shadow: none;
+    background: #{{ site.data.template.color.primary }};
+}
+
+img::selection {
+    background: 0 0;
+}
+
+img::-moz-selection {
+    background: 0 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .project-card-image {
+        height: 220px;
+    }
+
+    .project-card-title {
+        font-size: 16px;
+    }
+
+    .project-card-summary {
+        font-size: 11px;
+    }
+
+    .project-modal-images > img {
+        max-width: 50%;
+        max-height: 420px;
+    }
+
+    .portfolio-modal .project-modal-text {
+        max-width: 85%;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .project-card-image {
+        height: 200px;
+    }
+
+    .project-card-body {
+        padding: 18px;
+    }
+
+    .project-card-title {
+        font-size: 16px;
+        min-height: unset;
+    }
+
+    .project-card-summary {
+        font-size: 12px;
+        min-height: unset;
+    }
+
+    .project-tag {
+        font-size: 11px;
+    }
+
+    .project-highlights {
+        font-size: 12px;
+    }
+
+    .project-btn {
+        font-size: 12px;
+    }
+
+    .portfolio-modal .modal-content {
+        padding: 60px 0;
+    }
+
+    .portfolio-modal .modal-content h2 {
+        font-size: 2.2em;
+    }
+
+    .portfolio-modal .modal-subtitle {
+        font-size: 16px;
+    }
+
+    .project-modal-images::after {
+        display: none;
+    }
+
+    .project-modal-images > img {
+        flex: 1 1 100%;
+        max-width: 100%;
+        max-height: none;
+        padding: 0;
+    }
+
+    .portfolio-modal .project-modal-text {
+        max-width: 92%;
+        font-size: 14px;
+        line-height: 1.7;
+    }
 }

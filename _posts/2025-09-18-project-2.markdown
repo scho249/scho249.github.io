@@ -1,11 +1,12 @@
 ---
+
 title: Legal Text NER Classification
 subtitle: Named entity recognition on legal docket entries
 layout: default
 modal-id: 2
 date: September 2025
 img: ner_dashboard.png
-summary-img: ner_thumbnail.png
+summary_img: ner_thumbnail.png
 thumbnail: ner_thumbnail.png
 alt: Legal NER dashboard
 project-date: September 2025
@@ -19,4 +20,5 @@ description: This project built an end-to-end NLP pipeline for Named Entity Reco
 
 github:
 demo:
+
 ---

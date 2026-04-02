@@ -1,11 +1,12 @@
 ---
+
 title: Cruise Disease Outbreak Simulation
 subtitle: Network-based epidemic modeling
 layout: default
 modal-id: 1
 date: August 2025
 img: simulation.png
-summary-img: cruise_thumbnail.png
+summary_img: cruise_thumbnail.png
 thumbnail: cruise_thumbnail.png
 alt: Cruise network simulation visualization
 project-date: August 2025
@@ -19,4 +20,5 @@ description: This project built a network-based simulation of infectious disease
 
 github: https://github.com/scho249/Cruise_Flu_Outbreak_Simulation
 demo:
+
 ---
