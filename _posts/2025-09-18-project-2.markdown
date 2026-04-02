@@ -5,7 +5,7 @@ layout: default
 modal-id: 2
 date: September 2025
 img: ner_dashboard.png
-summary-img: ner_thumnail.png
+summary-img: ner_thumbnail.png
 thumbnail: ner_thumbnail.png
 alt: Legal NER dashboard
 project-date: September 2025
