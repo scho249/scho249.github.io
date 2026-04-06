@@ -6,7 +6,7 @@ layout: default
 modal-id: 3
 date: September 2025
 img: fetal_health.png
-summary_img: ctg_thumbnail.png
+summary_img: ctg_summary.png
 thumbnail: ctg_thumbnail.png
 alt: Fetal health classification dashboard
 project-date: September 2025

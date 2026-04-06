@@ -6,7 +6,7 @@ layout: default
 modal-id: 1
 date: August 2025
 img: simulation.png
-summary_img: cruise_thumbnail.png
+summary_img: cruise_summary.png
 thumbnail: cruise_thumbnail.png
 alt: Cruise network simulation visualization
 project-date: August 2025
