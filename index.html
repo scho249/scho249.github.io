@@ -1,20 +1,238 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claire Cho — Data Scientist & Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0a0f;--bg2:#111118;--bg3:#18181f;--bg4:#1f1f28;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#f0eff5;--text2:#a09fb5;--text3:#6b6a7d;--accent:#8b7cf8;--accent2:#b8aaff;--teal:#4ecdc4;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;background:rgba(10,10,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-family:var(--serif);font-size:1.25rem;color:var(--text);text-decoration:none}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{font-size:0.875rem;color:var(--text2);text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    #hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2.5rem 4rem;position:relative;overflow:hidden}
+    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(139,124,248,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(139,124,248,0.04) 1px,transparent 1px);background-size:60px 60px}
+    .orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+    .orb-1{width:600px;height:600px;top:-200px;right:-100px;background:radial-gradient(circle,rgba(139,124,248,0.12) 0%,transparent 70%)}
+    .orb-2{width:400px;height:400px;bottom:-100px;left:20%;background:radial-gradient(circle,rgba(78,205,196,0.08) 0%,transparent 70%)}
+    .hero-content{max-width:900px;position:relative;z-index:1}
+    .eyebrow{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:1.5rem}
+    .eyebrow::before{content:'';width:24px;height:1px;background:var(--accent2)}
+    h1.hero-name{font-family:var(--serif);font-size:clamp(3.5rem,9vw,7rem);line-height:1.0;letter-spacing:-0.02em}
+    .italic{font-style:italic;color:var(--accent2)}
+    .tagline{font-size:clamp(1rem,2vw,1.25rem);color:var(--text2);font-weight:300;margin-top:1.5rem;max-width:540px;line-height:1.7}
+    .chips{display:flex;flex-wrap:wrap;gap:0.625rem;margin-top:2rem}
+    .chip{font-size:0.75rem;padding:0.375rem 0.875rem;border:1px solid var(--border2);border-radius:100px;color:var(--text2)}
+    .chip.a{background:rgba(139,124,248,0.12);border-color:rgba(139,124,248,0.3);color:var(--accent2)}
+    .cta{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.75rem;border-radius:6px;font-size:0.875rem;font-weight:500;letter-spacing:0.02em;text-decoration:none;transition:all 0.2s;border:1px solid transparent}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+    .btn-teal{background:rgba(78,205,196,0.12);border-color:rgba(78,205,196,0.28);color:var(--teal)}
+    .btn-teal:hover{background:rgba(78,205,196,0.22);transform:translateY(-1px)}
+    .btn-ghost{border-color:var(--border2);color:var(--text2)}
+    .btn-ghost:hover{border-color:var(--accent);color:var(--accent2)}
+    .divider{max-width:1100px;margin:0 auto;height:1px;background:var(--border)}
+    section{padding:5rem 2.5rem;max-width:1100px;margin:0 auto}
+    .sec-label{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent2);display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem}
+    .sec-label::after{content:'';flex:1;height:1px;background:var(--border2);max-width:60px}
+    .sec-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);line-height:1.1}
+    .tracks{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+    .track-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:2rem 2rem 1.75rem;text-decoration:none;display:flex;flex-direction:column;gap:1rem;transition:border-color 0.25s,transform 0.2s}
+    .track-card.ds:hover{border-color:rgba(139,124,248,0.4);transform:translateY(-4px)}
+    .track-card.da:hover{border-color:rgba(78,205,196,0.4);transform:translateY(-4px)}
+    .t-icon{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .t-icon.ds{background:rgba(139,124,248,0.15);border:1px solid rgba(139,124,248,0.25)}
+    .t-icon.da{background:rgba(78,205,196,0.12);border:1px solid rgba(78,205,196,0.22)}
+    .t-icon svg{width:22px;height:22px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .t-icon.ds svg{stroke:var(--accent2)}
+    .t-icon.da svg{stroke:var(--teal)}
+    .track-name{font-family:var(--serif);font-size:1.5rem;color:var(--text)}
+    .track-desc{font-size:0.875rem;color:var(--text2);line-height:1.65}
+    .track-meta{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:0.5rem}
+    .track-count{font-size:0.75rem;color:var(--text3)}
+    .track-arrow.ds{font-size:0.85rem;color:var(--accent2)}
+    .track-arrow.da{font-size:0.85rem;color:var(--teal)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem}
+    .bio{font-size:1rem;color:var(--text2);line-height:1.8}
+    .bio strong{color:var(--text);font-weight:500}
+    .skill-group{margin-top:1.75rem}
+    .skill-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3);margin-bottom:0.6rem}
+    .pills{display:flex;flex-wrap:wrap;gap:0.4rem}
+    .pill{font-size:0.78rem;padding:0.28rem 0.7rem;background:var(--bg3);border:1px solid var(--border);border-radius:4px;color:var(--text2)}
+    .timeline{position:relative;padding-left:2rem}
+    .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:var(--border2)}
+    .t-item{position:relative;margin-bottom:2.25rem}
+    .t-item::before{content:'';position:absolute;left:-2rem;top:8px;width:7px;height:7px;border-radius:50%;background:var(--accent);transform:translateX(-3px)}
+    .t-date{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:0.25rem}
+    .t-title{font-weight:500;font-size:1rem;color:var(--text)}
+    .t-org{font-size:0.85rem;color:var(--text3);font-style:italic}
+    .t-desc{font-size:0.85rem;color:var(--text2);margin-top:0.4rem;line-height:1.65}
+    .connect-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;margin-top:2rem}
+    .connect-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1.5rem;text-decoration:none;display:flex;flex-direction:column;gap:0.75rem;transition:border-color 0.2s,transform 0.15s}
+    .connect-card:hover{border-color:rgba(139,124,248,0.35);transform:translateY(-2px)}
+    .c-icon{width:40px;height:40px;border-radius:8px;background:rgba(139,124,248,0.12);border:1px solid rgba(139,124,248,0.2);display:flex;align-items:center;justify-content:center}
+    .c-icon svg{width:20px;height:20px;stroke:var(--accent2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .c-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3)}
+    .c-value{font-size:0.88rem;color:var(--text);font-weight:500}
+    .c-arrow{margin-top:auto;font-size:0.8rem;color:var(--accent)}
+    footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto}
+    footer p{font-size:0.8rem;color:var(--text3)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .fu{animation:fadeUp 0.7s ease both}
+    .d1{animation-delay:0.1s}.d2{animation-delay:0.22s}.d3{animation-delay:0.35s}.d4{animation-delay:0.45s}.d5{animation-delay:0.55s}
+    @media(max-width:700px){.about-grid{grid-template-columns:1fr;gap:2.5rem}.tracks{grid-template-columns:1fr}}
+    @media(max-width:600px){nav{padding:0 1.25rem}.nav-links{gap:1.25rem}section{padding:4rem 1.25rem}#hero{padding:7rem 1.25rem 3rem}footer{flex-direction:column;gap:0.5rem;text-align:center}}
+  </style>
+</head>
+<body>
 
-<div class="home">
-
-  <h1>Posts</h1>
-
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
+<nav>
+  <a href="index.html" class="nav-logo">Claire Cho</a>
+  <ul class="nav-links">
+    <li><a href="data-science.html">Data Science</a></li>
+    <li><a href="data-analytics.html">Data Analytics</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#connect">Connect</a></li>
   </ul>
+</nav>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div id="hero">
+  <div class="hero-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="hero-content">
+    <div class="eyebrow fu d1">Data Scientist · Analyst · Engineer</div>
+    <h1 class="hero-name fu d2">Claire<br/><span class="italic">Cho</span></h1>
+    <p class="tagline fu d3">Applied math meets machine learning. I build end-to-end pipelines, NLP models, and analytics systems that turn messy data into decisions.</p>
+    <div class="chips fu d4">
+      <span class="chip a">Python</span><span class="chip a">Machine Learning</span><span class="chip a">NLP</span>
+      <span class="chip">SQL</span><span class="chip">Scikit-learn</span><span class="chip">Network Modeling</span><span class="chip">Tableau</span><span class="chip">Data Engineering</span>
+    </div>
+    <div class="cta fu d5">
+      <a href="data-science.html" class="btn btn-primary">Data Science Projects →</a>
+      <a href="data-analytics.html" class="btn btn-teal">Data Analytics Projects →</a>
+      <a href="#connect" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </div>
 </div>
+
+<div class="divider"></div>
+
+<section>
+  <div class="sec-label">Explore</div>
+  <h2 class="sec-title">Project Tracks</h2>
+  <div class="tracks">
+    <a href="data-science.html" class="track-card ds">
+      <div class="t-icon ds">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+      </div>
+      <div class="track-name">Data Science</div>
+      <p class="track-desc">Machine learning models, NLP pipelines, epidemic simulations, and transformer fine-tuning. Projects built with scientific rigor and reproducibility in mind.</p>
+      <div class="track-meta">
+        <span class="track-count">3 projects · Python, BERT, Scikit-learn</span>
+        <span class="track-arrow ds">→</span>
+      </div>
+    </a>
+    <a href="data-analytics.html" class="track-card da">
+      <div class="t-icon da">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      </div>
+      <div class="track-name">Data Analytics</div>
+      <p class="track-desc">Dashboards, data pipelines, geospatial reporting, and automated stakeholder workflows. Turning operational data into clear, actionable insights.</p>
+      <div class="track-meta">
+        <span class="track-count">Projects coming soon</span>
+        <span class="track-arrow da">→</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="about">
+  <div class="sec-label">Background</div>
+  <h2 class="sec-title">About Me</h2>
+  <div class="about-grid">
+    <div>
+      <p class="bio">I'm a data scientist and analyst with a foundation in <strong>applied and computational mathematics</strong> (University of Washington, 2022), currently pursuing an <strong>M.S. in Computational Data Science</strong> at Georgia Tech.</p>
+      <p class="bio" style="margin-top:1rem;">I've built production analytics systems at <strong>PeaceHealth</strong> — clinical pipelines, standardized metrics, and automated dashboards — and contributed geospatial data workflows at <strong>RMSI</strong>. I enjoy projects at the intersection of rigorous modeling and real-world impact.</p>
+      <div class="skill-group">
+        <div class="skill-label">Languages & Frameworks</div>
+        <div class="pills"><span class="pill">Python</span><span class="pill">SQL</span><span class="pill">R</span><span class="pill">Scikit-learn</span><span class="pill">Hugging Face</span><span class="pill">Pandas</span><span class="pill">NumPy</span></div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Tools & Platforms</div>
+        <div class="pills"><span class="pill">Tableau</span><span class="pill">GitHub</span><span class="pill">Jupyter</span><span class="pill">SEIRS+</span><span class="pill">SMOTE</span></div>
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-date">Aug 2025 – Feb 2026</div>
+        <div class="t-title">Analytic Reporting Developer</div>
+        <div class="t-org">PeaceHealth</div>
+        <div class="t-desc">Built clinical data pipelines, standardized metrics, and automated stakeholder dashboards.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">2024 – Present</div>
+        <div class="t-title">M.S. Computational Data Science</div>
+        <div class="t-org">Georgia Institute of Technology</div>
+        <div class="t-desc">Advanced coursework in analytics, machine learning, and simulation.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">March 2023</div>
+        <div class="t-title">Data Analyst</div>
+        <div class="t-org">RMSI</div>
+        <div class="t-desc">Geospatial analytics and data engineering supporting operational reporting workflows.</div>
+      </div>
+      <div class="t-item">
+        <div class="t-date">2018 – 2022</div>
+        <div class="t-title">B.S. Applied & Computational Mathematics</div>
+        <div class="t-org">University of Washington</div>
+        <div class="t-desc">Foundation in mathematical modeling, statistics, and computing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="connect">
+  <div class="sec-label">Contact</div>
+  <h2 class="sec-title">Let's Connect</h2>
+  <div class="connect-grid">
+    <a href="mailto:seovo351@gmail.com" class="connect-card">
+      <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="c-label">Email</div>
+      <div class="c-value">seovo351@gmail.com</div>
+      <div class="c-arrow">↗</div>
+    </a>
+    <a href="https://www.linkedin.com/in/seoyoung-cho-a669721a9/" target="_blank" class="connect-card">
+      <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+      <div class="c-label">LinkedIn</div>
+      <div class="c-value">Seoyoung Cho</div>
+      <div class="c-arrow">↗</div>
+    </a>
+    <a href="https://github.com/scho249" target="_blank" class="connect-card">
+      <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+      <div class="c-label">GitHub</div>
+      <div class="c-value">github.com/scho249</div>
+      <div class="c-arrow">↗</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Claire Cho</p>
+  <p>Data Science · Data Analytics · Data Engineering</p>
+</footer>
+
+</body>
+</html>

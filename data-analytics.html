@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claire Cho — Data Analytics Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0a0f;--bg2:#111118;--bg3:#18181f;--bg4:#1f1f28;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#f0eff5;--text2:#a09fb5;--text3:#6b6a7d;--accent:#8b7cf8;--accent2:#b8aaff;--teal:#4ecdc4;--teal2:#2aa8a0;--serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;background:rgba(10,10,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-family:var(--serif);font-size:1.25rem;color:var(--text);text-decoration:none}
+    .nav-links{display:flex;gap:2rem;list-style:none}
+    .nav-links a{font-size:0.875rem;color:var(--text2);text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-links a.active{color:var(--teal)}
+
+    /* PAGE HERO — teal accent for DA */
+    .page-hero{padding:9rem 2.5rem 4rem;max-width:1100px;margin:0 auto;position:relative}
+    .back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--text3);text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:2rem;transition:color 0.2s}
+    .back-link:hover{color:var(--teal)}
+    .page-eyebrow{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+    .page-eyebrow::before{content:'';width:24px;height:1px;background:var(--teal)}
+    h1.page-title{font-family:var(--serif);font-size:clamp(2.5rem,6vw,5rem);line-height:1.05;letter-spacing:-0.02em}
+    .italic{font-style:italic;color:var(--teal)}
+    .page-subtitle{font-size:1.1rem;color:var(--text2);font-weight:300;margin-top:1.25rem;max-width:580px;line-height:1.75}
+    .page-chips{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.75rem}
+    .chip{font-size:0.72rem;padding:0.3rem 0.8rem;border:1px solid rgba(78,205,196,0.3);border-radius:100px;color:var(--teal);background:rgba(78,205,196,0.08)}
+
+    .orb-teal{position:absolute;width:500px;height:500px;top:-150px;right:-80px;border-radius:50%;filter:blur(80px);background:radial-gradient(circle,rgba(78,205,196,0.1) 0%,transparent 70%);pointer-events:none}
+
+    /* LAYOUT */
+    .divider{max-width:1100px;margin:0 auto;height:1px;background:var(--border)}
+    section{padding:4rem 2.5rem;max-width:1100px;margin:0 auto}
+    .sec-label{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem}
+    .sec-label::after{content:'';flex:1;height:1px;background:var(--border2);max-width:60px}
+    .sec-title{font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.1;margin-bottom:2rem}
+
+    /* CARDS */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.5rem}
+    .project-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:border-color 0.25s,transform 0.2s}
+    .project-card:hover{border-color:rgba(78,205,196,0.38);transform:translateY(-3px)}
+    .card-thumb{height:190px;overflow:hidden;background:var(--bg4);display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
+    .card-thumb img{width:100%;height:100%;object-fit:cover;opacity:0.82;transition:opacity 0.25s}
+    .project-card:hover .card-thumb img{opacity:1}
+    .thumb-placeholder{font-size:3.5rem;opacity:0.15;position:absolute}
+    .badge{position:absolute;top:12px;left:12px;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.65rem;border-radius:100px;background:rgba(78,205,196,0.15);border:1px solid rgba(78,205,196,0.3);color:var(--teal)}
+    .card-body{padding:1.375rem;flex:1;display:flex;flex-direction:column}
+    .card-title{font-family:var(--serif);font-size:1.2rem;color:var(--text);margin-bottom:0.5rem;line-height:1.2}
+    .card-desc{font-size:0.875rem;color:var(--text2);line-height:1.65;flex:1}
+    .card-highlights{margin-top:1rem;display:flex;flex-direction:column;gap:0.3rem}
+    .hl{display:flex;align-items:flex-start;gap:0.5rem;font-size:0.8rem;color:var(--text3)}
+    .hl::before{content:'→';color:var(--teal);flex-shrink:0;margin-top:0.05rem}
+    .card-tags{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:1rem}
+    .tag{font-size:0.68rem;padding:0.18rem 0.6rem;background:var(--bg4);border:1px solid var(--border);border-radius:4px;color:var(--text3);letter-spacing:0.03em}
+    .card-footer{display:flex;align-items:center;gap:0.75rem;margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border)}
+    .card-link{font-size:0.8rem;color:var(--teal);text-decoration:none;display:flex;align-items:center;gap:0.35rem;transition:color 0.15s}
+    .card-link:hover{color:var(--text)}
+    .card-link svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .card-date{font-size:0.75rem;color:var(--text3);margin-left:auto}
+
+    /* COMING SOON */
+    .coming-soon{background:var(--bg3);border:1px dashed var(--border2);border-radius:12px;padding:3rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1rem;min-height:240px}
+    .cs-icon{font-size:2.5rem;opacity:0.2}
+    .cs-title{font-family:var(--serif);font-size:1.25rem;color:var(--text2)}
+    .cs-desc{font-size:0.875rem;color:var(--text3);max-width:340px;line-height:1.65}
+
+    /* SKILLS HIGHLIGHT */
+    .skills-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem}
+    .skill-tag{font-size:0.78rem;padding:0.3rem 0.75rem;background:rgba(78,205,196,0.08);border:1px solid rgba(78,205,196,0.22);border-radius:4px;color:var(--teal)}
+
+    /* EXPERIENCE CALLOUT */
+    .exp-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:1.75rem 2rem;margin-top:1.5rem}
+    .exp-header{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}
+    .exp-dot{width:10px;height:10px;border-radius:50%;background:var(--teal);flex-shrink:0}
+    .exp-role{font-weight:500;font-size:1rem;color:var(--text)}
+    .exp-org{font-size:0.85rem;color:var(--text3);font-style:italic}
+    .exp-desc{font-size:0.875rem;color:var(--text2);line-height:1.7}
+
+    /* CONNECT */
+    .connect-strip{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem}
+    .connect-card{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;text-decoration:none;display:flex;align-items:center;gap:1rem;transition:border-color 0.2s,transform 0.15s;flex:1;min-width:180px}
+    .connect-card:hover{border-color:rgba(78,205,196,0.35);transform:translateY(-2px)}
+    .c-icon{width:36px;height:36px;border-radius:7px;background:rgba(78,205,196,0.1);border:1px solid rgba(78,205,196,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .c-icon svg{width:18px;height:18px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .c-info .c-label{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text3)}
+    .c-info .c-value{font-size:0.85rem;color:var(--text);font-weight:500}
+    .c-arrow{margin-left:auto;font-size:0.8rem;color:var(--teal)}
+
+    footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto}
+    footer p{font-size:0.8rem;color:var(--text3)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .fu{animation:fadeUp 0.7s ease both}
+    .d1{animation-delay:0.05s}.d2{animation-delay:0.15s}.d3{animation-delay:0.25s}.d4{animation-delay:0.35s}
+    @media(max-width:600px){nav{padding:0 1.25rem}.nav-links{gap:1.25rem}section,.page-hero{padding-left:1.25rem;padding-right:1.25rem}footer{flex-direction:column;gap:0.5rem;text-align:center}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Claire Cho</a>
+  <ul class="nav-links">
+    <li><a href="data-science.html">Data Science</a></li>
+    <li><a href="data-analytics.html" class="active">Data Analytics</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#connect">Connect</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="orb-teal"></div>
+  <a href="index.html" class="back-link fu d1">← Back to portfolio</a>
+  <div class="page-eyebrow fu d2">Dashboards · Pipelines · Visualization</div>
+  <h1 class="page-title fu d3">Data <span class="italic">Analytics</span><br/>Projects</h1>
+  <p class="page-subtitle fu d4">Operational dashboards, scalable data pipelines, and geospatial reporting workflows that help teams understand what's actually happening in their data.</p>
+  <div class="page-chips fu d4">
+    <span class="chip">SQL</span>
+    <span class="chip">Tableau</span>
+    <span class="chip">Python</span>
+    <span class="chip">Data Engineering</span>
+    <span class="chip">Geospatial</span>
+    <span class="chip">Clinical Analytics</span>
+    <span class="chip">ETL</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section>
+  <div class="sec-label">Projects</div>
+  <div class="sec-title">All Data Analytics Work</div>
+
+  <div class="projects-grid">
+    <div class="coming-soon">
+      <div class="cs-icon">📊</div>
+      <div class="cs-title">Projects coming soon</div>
+      <p class="cs-desc">Dashboards, data pipelines, and geospatial visualizations are being documented and prepared for showcase.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RELEVANT EXPERIENCE -->
+<section>
+  <div class="sec-label">Applied Experience</div>
+  <div class="sec-title">Analytics in Practice</div>
+  <p style="font-size:0.9rem;color:var(--text2);max-width:600px;line-height:1.75;">My professional analytics work spans clinical reporting, geospatial pipelines, and stakeholder dashboards — experience that directly informs the kind of analytics projects I build.</p>
+
+  <div class="exp-card">
+    <div class="exp-header">
+      <div class="exp-dot"></div>
+      <div>
+        <div class="exp-role">Analytic Reporting Developer</div>
+        <div class="exp-org">PeaceHealth · Aug 2025 – Feb 2026</div>
+      </div>
+    </div>
+    <p class="exp-desc">Built reliable clinical data pipelines, standardized KPI metrics across departments, and automated dashboards delivered to executive stakeholders. Focused on reducing manual reporting burden and ensuring consistency across data sources.</p>
+    <div class="skills-row">
+      <span class="skill-tag">SQL</span><span class="skill-tag">ETL</span><span class="skill-tag">Clinical Analytics</span><span class="skill-tag">Dashboard Automation</span><span class="skill-tag">Stakeholder Reporting</span>
+    </div>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-header">
+      <div class="exp-dot"></div>
+      <div>
+        <div class="exp-role">Data Analyst</div>
+        <div class="exp-org">RMSI · March 2023</div>
+      </div>
+    </div>
+    <p class="exp-desc">Analytics and data engineering supporting geospatial and operational reporting. Built scalable workflows for spatial data processing and contributed to cross-functional reporting pipelines.</p>
+    <div class="skills-row">
+      <span class="skill-tag">Geospatial Data</span><span class="skill-tag">Python</span><span class="skill-tag">Data Engineering</span><span class="skill-tag">Operational Reporting</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="sec-label">Contact</div>
+  <div class="sec-title" style="font-size:1.4rem;">Interested in my analytics work?</div>
+  <div class="connect-strip">
+    <a href="mailto:seovo351@gmail.com" class="connect-card">
+      <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div class="c-info"><div class="c-label">Email</div><div class="c-value">seovo351@gmail.com</div></div>
+      <div class="c-arrow">↗</div>
+    </a>
+    <a href="https://www.linkedin.com/in/seoyoung-cho-a669721a9/" target="_blank" class="connect-card">
+      <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+      <div class="c-info"><div class="c-label">LinkedIn</div><div class="c-value">Seoyoung Cho</div></div>
+      <div class="c-arrow">↗</div>
+    </a>
+    <a href="https://github.com/scho249" target="_blank" class="connect-card">
+      <div class="c-icon"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+      <div class="c-info"><div class="c-label">GitHub</div><div class="c-value">github.com/scho249</div></div>
+      <div class="c-arrow">↗</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Claire Cho</p>
+  <p><a href="index.html" style="color:var(--text3);text-decoration:none;">← Full portfolio</a></p>
+</footer>
+
+</body>
+</html>
